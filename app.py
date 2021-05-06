@@ -1,6 +1,10 @@
 from flask import Flask
-app = Flask(__name__)
+api = Flask(__name__)
 
-@app.route('/')
+@api.route('/')
 def hello_world():
     return 'Hello World!'
+
+@api.route('/docs', methods=['GET'])
+def recuperer_liste_documents():
+    return 
