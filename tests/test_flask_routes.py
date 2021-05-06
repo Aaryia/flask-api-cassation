@@ -13,10 +13,6 @@ def client():
     with app.api.test_client() as client:
         yield client
 
-def test_hello_world(client):
-    response = client.get('/')
-    assert b'Hello World!' in response.data
-
 def test_recupere_tout_documents(client):
     response = client.get('/docs')
     data = json.loads(response.data)
