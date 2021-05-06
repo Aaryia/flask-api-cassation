@@ -17,7 +17,7 @@ def test_hello_world(client):
     response = client.get('/')
     assert b'Hello World!' in response.data
 
-def test_hello_world(client):
+def test_recupere_tout_documents(client):
     response = client.get('/docs')
     data = json.loads(response.data)
     assert len(data) == 34
