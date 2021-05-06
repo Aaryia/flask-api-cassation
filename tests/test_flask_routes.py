@@ -1,6 +1,8 @@
 import os
 
 import pytest
+import json
+
 import app
 
 
@@ -14,3 +16,8 @@ def client():
 def test_hello_world(client):
     response = client.get('/')
     assert b'Hello World!' in response.data
+
+def test_hello_world(client):
+    response = client.get('/docs')
+    data = json.loads(response.data)
+    assert len(data) == 34
