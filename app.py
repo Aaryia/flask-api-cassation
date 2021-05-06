@@ -1,7 +1,6 @@
 from flask import Flask, abort
 
 import json
-import os
 import re
 
 import flaskapi.services.document_service as docs
