@@ -11,4 +11,4 @@ EXPOSE 5000
 
 COPY . .
 
-CMD if [[ $PORT -gt^C ]]; then python3 -m flask run --host=0.0.0.0 --port=$PORT; else python3 -m flask run --host=0.0.0.0 --port=5000;fi
+CMD if [ $PORT -gt 0 ]; then python3 -m flask run --host=0.0.0.0 --port=$PORT; else python3 -m flask run --host=0.0.0.0 --port=5000;fi
